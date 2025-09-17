@@ -71,15 +71,20 @@
     }
 
     #confession {
-      display: none;
-      margin-top: 15px;
-      padding: 15px;
-      border-radius: 15px;
-      background: #fff0f5;
-      color: #b30047;
-      font-weight: bold;
-      animation: fadeIn 1.5s ease;
+  display: none;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  background: #fff0f5;
+  color: #b30047;
+  font-weight: bold;
+  animation: fadeIn 1.5s ease;
+  max-height: 60vh;      /* limit height */
+  overflow-y: auto;      /* scroll if text too long */
+  text-align: left;      /* align text for easier reading */
+  white-space: pre-line; /* keep your line breaks */
     }
+    
 
     @keyframes fadeIn {
       from {opacity: 0; transform: scale(0.9);}
