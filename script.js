@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const proceedBtn = document.querySelector("button.proceed, .proceed, #proceed");
-  const resetBtn = document.querySelector("button.reset, .reset, #reset");
+  const proceedBtn = document.querySelector(".proceed");
+  const resetBtn = document.querySelector(".reset");
 
   if (proceedBtn) {
     proceedBtn.addEventListener("click", () => {
