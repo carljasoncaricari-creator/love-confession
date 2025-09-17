@@ -1,151 +1,121 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Something I Want to Tell You ❤️</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confession 💖</title>
   <style>
-    :root{
-      --bg1: #ffe6f0;
-      --bg2: #fff0f7;
-      --accent: #ff4d94;
-      --accent-dark: #d02b6f;
-      --card: rgba(255,255,255,0.9);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: radial-gradient(circle at 10% 10%, #fff7fb 0%, var(--bg1) 35%, var(--bg2) 100%);
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:24px;
-    }
-    .container{
-      width:100%;
-      max-width:760px;
-      border-radius:18px;
-      box-shadow: 0 12px 40px rgba(208,43,111,0.12);
-      background: linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,246,250,0.6) 100%);
-      padding:28px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hearts{position:absolute; right:-60px; top:-60px; opacity:0.12; font-size:320px; transform:rotate(-20deg);}
-    h1{margin:0 0 8px 0; font-weight:700; color:var(--accent-dark);}
-    p.lead{margin:0 0 18px 0; color:#5a2b3f}
-
-    .step{
-      background:var(--card);
-      border-radius:12px;
-      padding:18px;
-      margin-bottom:18px;
-      box-shadow: 0 6px 18px rgba(160,66,120,0.06);
-      transition:transform .36s ease, opacity .36s ease;
-    }
-    label{display:block; font-size:14px; color:#664051; margin-bottom:8px}
-    input[type=text], textarea{
-      width:100%;
-      border:1px solid rgba(200,120,150,0.18);
-      padding:12px 14px;
-      border-radius:10px;
-      font-size:15px;
-      outline:none;
-      resize:vertical;
-      background:transparent;
-    }
-    .muted{font-size:13px; color:#7a586c}
-
-    .btn-row{display:flex; gap:12px; align-items:center}
-    button.btn{
-      background:linear-gradient(180deg,var(--accent) 0%, var(--accent-dark) 100%);
-      color:white; border:0; padding:12px 18px; border-radius:12px; font-weight:600; cursor:pointer;
-      box-shadow: 0 8px 20px rgba(255,77,148,0.14);
-    }
-    button.btn.ghost{background:transparent; color:var(--accent-dark); border:1px solid rgba(208,43,111,0.12)}
-
-    /* confession reveal */
-    .confession-wrap{display:none; opacity:0; transform:translateY(10px);}
-    .confession-wrap.show{display:block; opacity:1; transform:translateY(0); transition:all .48s cubic-bezier(.2,.9,.3,1);}
-    .confession{
-      padding:20px; border-radius:12px; background:linear-gradient(180deg,#fff 0%, #fff6f9 100%); border:1px solid rgba(230,160,190,0.18);
-      font-size:16px; color:#5b2636; line-height:1.55;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
     }
 
-    .footer{margin-top:12px; font-size:13px; color:#7b5162}
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 350px;
+      width: 100%;
+      animation: fadeIn 1.5s ease;
+    }
 
-    /* small */
-    @media (max-width:520px){
-      .container{padding:18px}
-      .hearts{font-size:220px; right:-30px; top:-30px}
+    h1 {
+      color: #d6336c;
+    }
+
+    p {
+      color: #333;
+    }
+
+    input {
+      padding: 10px;
+      width: 100%;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 10px 5px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button.proceed {
+      background: #d6336c;
+      color: white;
+    }
+
+    button.proceed:hover {
+      background: #a61e4d;
+    }
+
+    button.reset {
+      background: #ddd;
+    }
+
+    button.reset:hover {
+      background: #bbb;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.9);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    /* floating hearts */
+    .heart {
+      position: absolute;
+      color: #ff4d6d;
+      font-size: 20px;
+      animation: float 6s infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-800px); opacity: 0; }
     }
   </style>
 </head>
-  <script src="script.js"></script>
 <body>
-  <div class="container" role="main">
-    <div class="hearts">❤❤</div>
+  <div class="card">
     <h1>Hey — how are you?</h1>
-    <p class="lead">I hope you're doing well. <span class="muted">(Take a moment — I'm listening.)</span></p>
-
-    <div class="step" id="step-ask">
-      <label for="mood">Tell me how you're feeling (optional)</label>
-      <input id="mood" type="text" placeholder="e.g. I'm good, a bit tired, excited...">
-      <p class="muted" style="margin-top:8px">When you're ready:</p>
-      <div style="display:flex; justify-content:space-between; gap:12px; margin-top:10px">
-        <div style="flex:1">
-          <div style="font-weight:600; margin-bottom:6px; color:#68283c">I want to tell you something</div>
-          <div class="muted">(Click proceed to see the message)</div>
-        </div>
-        <div style="align-self:center">
-          <button class="btn" id="btn-proceed">Proceed</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="step confession-wrap" id="step-confession">
-      <div class="confession" id="confession-text">
-        <div id="confession-inner">Hi Boss, kumusta ka? I know you're not doing good sometimes but laban lang ara grind paras future. I just want to say nga I'm still stalking your reposts and one really stood out to me the phrase \"you know a boy's real intentions when you reject them\" can I ask did you reject me ba? If yes then I guess this is my first time getting rejected HAHAHAHAHA. I saw all your reports about your past. Pero wakoy paki I'm not competing with anyone. Let me show you my own way of taking care of you. Naa ko ari oh I can fix you. Hell, I'll do anything to work things out between us. Perhaps I want you to fight for me just a lil bit the way I would go to war for you. My intentions for you is pure, it will always be. Gusto tika sag-ulohon gusto nako mabaw-an tanan2 nimo and I'll embrace it all with open arms. I want to show you how being loved properly feels like. I want to make you genuinely happy. I rejected my own feelings like you're rejecting mine but I can't get rid of this. I want to be there when you achieve your goals and I want you to be with me when I achieve mine. There's something about you I can't quite figure out. So let me do the honour to learn everything about you. Can we fix things? Talk about our issues and return to eachother, let's learn eachother again but this time let's be real najud cause last time mangud we ended before we even started. Let us learn and understand our mistakes from the past and make a strong relationship like no other. I'm not begging or lowering my pride. Just let me show you how to properly handle you. Let me fix your avoidant attachment issues let me get rid of that trauma. I know deep down you're hurting inside and you pushed me away to avoid feelings do don't know how to deal with. I see that, I see you. So if you have time tell me everything, your flaws, traumas, tanang kasalit nga gidala nimo ihatag na nako andam tika damayan ana tanan if ready naka. Give me a small piece of you and I'll give you all of mine. Wako nanginahanglan nga tagaan ko nimog dako, I don't need any pieces of you that you're not ready to give. I'm fine with a little bit, I'm fine taking it slow. All I wanted is you and let me handle all the patience. So let's give it a try. Gusto nako makita akong kaugmaon nga naa ka. I want to see your beautiful face until I grow old. There's no other person that I'll offer my everything but you. Gusto ko mogurang kauban ka. Gusto tika lutoan sa imong paboritong sud-an kada uli nimo gikan trabaho. Gusto nako ikaw ang nasa likod sa pultahan if mouli ko. I want us to take care of eachother. Ikaw akong gusto makauban. I'm improving everyday I'm getting better physically, emotionally, financially and spiritually for myself. And I don't mind giving all this things that I built to you. Let me yearn for you forever. I will not give up on you, worth it kayka antosan boss HAHAHA buotan kayka bahalag maldita ka sahay HAHAHAHA ganahan langjud ko saimong pagkatawo, buotan ka and kugihan pajud yes naay daghan ana but unique kayka in the way nga nimo rako makafeel ug ing-ani. You're beautiful eyes and smile, diko ganahan nay laing moangkon ana. Let me the one to show you the whole world.<br><br>So let me be your \"Sagip\" — Jan Roberts</div>
-      </div>
-      <div class="footer">Want to edit the message? Open this HTML file and replace the text inside <code>id="confession-inner"</code>.</div>
-    </div>
-
-    <div style="margin-top:14px; display:flex; gap:10px; justify-content:flex-end;">
-      <button class="btn ghost" id="btn-reset">Reset</button>
-    </div>
+    <p>I hope you're doing well. <small>(Take a moment — I'm listening.)</small></p>
+    <input type="text" placeholder="e.g. I'm good, a bit tired, excited">
+    <p>When you're ready:</p>
+    <h3>I want to tell you something</h3>
+    <button class="proceed">Proceed</button>
+    <button class="reset">Reset</button>
   </div>
 
+  <script src="script.js"></script>
+
   <script>
-    const btnProceed = document.getElementById('btn-proceed');
-    const confessionWrap = document.getElementById('step-confession');
-    const moodInput = document.getElementById('mood');
-    const btnReset = document.getElementById('btn-reset');
-    const confessionInner = document.getElementById('confession-inner');
-
-    function revealConfession(){
-      const mood = moodInput.value.trim();
-      if(mood) confessionInner.insertAdjacentHTML('afterbegin','<div style=\"font-size:13px;color:#7a5160;margin-bottom:8px\">You said: “'+escapeHtml(mood)+'”</div>');
-      confessionWrap.classList.add('show');
-      setTimeout(()=>{
-        confessionWrap.scrollIntoView({behavior:'smooth', block:'center'});
-      },120);
+    // Create floating hearts
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.top = window.innerHeight + "px";
+      heart.style.fontSize = Math.random() * 20 + 10 + "px";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
     }
-
-    btnProceed.addEventListener('click', revealConfession);
-
-    btnReset.addEventListener('click', ()=>{
-      confessionWrap.classList.remove('show');
-      const prefix = confessionInner.querySelector('div');
-      if(prefix && prefix.textContent.startsWith('You said:')) prefix.remove();
-    });
-
-    function escapeHtml(unsafe) {
-      return unsafe
-        .replace(/&/g, \"&amp;\")
-        .replace(/</g, \"&lt;\")
-        .replace(/>/g, \"&gt;\")
-        .replace(/\\\"/g, \"&quot;\")
-        .replace(/'/g, \"&#039;\");\n    }\n  </script>\n</body>\n</html>
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
